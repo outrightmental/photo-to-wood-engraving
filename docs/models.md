@@ -67,10 +67,10 @@ When using the `comfyui_controlnet_aux` extension, the Depth Anything weights ar
 
 ## Required Custom Node Packs
 
-ComfyUI core does **not** include ControlNet preprocessors. Install one of:
+ComfyUI core does **not** include ControlNet preprocessors. You **must** install at least one ControlNet preprocessor pack (these workflows assume `comfyui_controlnet_aux`):
 
-- [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) — provides Canny, HED, Depth (including Depth Anything), Lineart preprocessors, and auto-downloads required annotator models such as `depth_anything_vitl14.pth` into `models/annotators/` on first use
-- [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) — tiled diffusion upscaling (optional)
-- [ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus) — IP-Adapter support (optional)
+- [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) — **required** for Canny, HED, Depth (including Depth Anything), Lineart preprocessors, and auto-downloads required annotator models such as `depth_anything_vitl14.pth` into `models/annotators/` on first use
+- [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) — tiled diffusion upscaling (**optional add-on**)
+- [ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus) — IP-Adapter support for style reference workflows (**optional add-on**)
 
 Install via ComfyUI Manager or by cloning into `custom_nodes/`.

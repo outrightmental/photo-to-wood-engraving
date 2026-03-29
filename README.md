@@ -19,7 +19,7 @@ The workflows use a hybrid approach:
 1. **Photo preprocessing** — clean tone and structure maps
 2. **Diffusion-based stylization** — SDXL base with engraving LoRA + ControlNet structure control
 3. **Print-aware postprocessing** — binarization via threshold masking
-4. **High-resolution finishing** — tiled VAE decode and optional upscaling
+4. **High-resolution finishing** — optional tiled VAE decode for large outputs and upscaling
 
 ## Quick Start
 
@@ -94,8 +94,8 @@ Dual ControlNet (Depth primary + Canny secondary) prevents busy noise in skies a
 
 ```
 LoadImage → ImageScale (1216×832)
-  ├→ DepthPreprocessor → ControlNetApplyAdvanced (strength 0.75, start 0.1, end 1.0)
-  ├→ CannyPreprocessor → ControlNetApplyAdvanced (strength 0.45, end 0.5)
+  ├→ DepthAnythingPreprocessor → ControlNetApplyAdvanced (strength 0.75, start 0.1, end 1.0)
+  ├→ CannyEdgePreprocessor → ControlNetApplyAdvanced (strength 0.45, end 0.5)
   └→ VAEEncode ──────────────────────────────────────────────┐
 CheckpointLoaderSimple → LoraLoader (0.8/0.6)                │
   ├→ CLIPTextEncodeSDXL (positive) → Depth CN → Canny CN ┐  │
