@@ -181,7 +181,7 @@ CheckpointLoaderSimple → LoraLoader (0.8/0.6)            │
 | Problem | Cause | Fix |
 |---|---|---|
 | Gray haze / muddy midtones | Insufficient contrast | Increase LoRA strength; lower ThresholdMask value (0.45–0.55); add binarization stage |
-| "Wormy" circular hatching | Non-engraverly line flow | Increase structure controls; tighten denoise; add Depth conditioning; reduce CFG |
+| "Wormy" circular hatching | Non-engraver-like line flow | Increase structure controls; tighten denoise; add Depth conditioning; reduce CFG |
 | Portrait identity drift | Style overwhelms identity | Use InstantID; reduce denoise (0.30–0.45); keep Canny end_percent ~0.75–0.85 |
 | Architecture lines bending | Geometry distortion | Lower denoise (0.25–0.35); increase Canny strength (1.0–1.2); avoid high upscale denoise |
 | Seams in tiled upscaling | Tile boundary artifacts | Reduce tile denoise; increase overlap; use Ultimate SD Upscale |
