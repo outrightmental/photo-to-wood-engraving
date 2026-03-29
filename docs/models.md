@@ -55,11 +55,21 @@ Requires a ComfyUI extension (e.g., ComfyUI_InstantID). Follow the extension's i
 
 Requires a ComfyUI extension (e.g., ComfyUI_IPAdapter_plus). Supply 1–3 authentic engraving prints as style anchors.
 
+## Depth & Preprocessor Models
+
+The landscape workflow uses a depth preprocessor node (`DepthAnythingPreprocessor`) that expects the **Depth Anything ViT-L 14** weights:
+
+| Model file | Purpose | Source | Typical Path |
+|---|---|---|---|
+| `depth_anything_vitl14.pth` | Monocular depth estimation for landscape workflow | [LiheYoung/depth-anything-large-hf](https://huggingface.co/LiheYoung/depth-anything-large-hf) or auto-downloaded by `comfyui_controlnet_aux` | `models/annotators/depth_anything_vitl14.pth` |
+
+When using the `comfyui_controlnet_aux` extension, the Depth Anything weights are typically auto-downloaded to `models/annotators/depth_anything_vitl14.pth` on first use of the Depth Anything nodes. If your environment has no internet access, download the compatible Depth Anything ViT-L 14 weights manually from the source above and place them at the configured path.
+
 ## Required Custom Node Packs
 
 ComfyUI core does **not** include ControlNet preprocessors. Install one of:
 
-- [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) — provides Canny, HED, Depth, Lineart preprocessors
+- [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) — provides Canny, HED, Depth (including Depth Anything), Lineart preprocessors, and auto-downloads required annotator models such as `depth_anything_vitl14.pth` into `models/annotators/` on first use
 - [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) — tiled diffusion upscaling (optional)
 - [ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus) — IP-Adapter support (optional)
 
